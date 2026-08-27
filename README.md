@@ -24,7 +24,7 @@ CMS-style data lives in JSON so listings and ads can be filled without touching 
 | --- | --- |
 | `content/listings.json` | Operator directory |
 | `content/sponsors.json` | Gold / Silver / Bronze inventory, prices, on/off, assigned slug |
-| `content/site.json` | Site name, tagline, sales email |
+| `content/site.json` | Site name, tagline, **partnership email** (`contactEmail`) |
 
 ## Run locally
 
@@ -122,12 +122,19 @@ Gold 2/3, other Silver categories, and Bronze 2–6 follow the same pattern. See
 
 Paid and organic stay separate in the UI: gold rail / silver pins / bronze highlights are labeled 贊助; the directory below is the unpaid list.
 
+## Partnership / contact email
+
+One field: `contactEmail` in `content/site.json`. Footer, sponsor inquiry, and the contact form all read it. Change that value to change the public address later.
+
+Current address: **casinodex@agentmail.to** (AgentMail). Do not use a personal Gmail or any other personal mailbox.
+
 ## Pages
 
 - `/` — 18+ notice, hero, 3 empty Gold seats, organic preview of the 14 brands
 - `/directory` — category filters, Silver pins, Bronze highlights, organic results
 - `/operators/[slug]` — detail, license placeholder, empty score, official-site CTA
-- `/sponsors` — rate card
+- `/sponsors` — rate card + 贊助洽詢 form
+- `/contact` — partnership / sponsor contact form (mailto the AgentMail inbox)
 - `/admin` — assign Gold / Silver / Bronze
 - `/about`, `/legal/disclaimer`, `/legal/responsible-gaming`
 

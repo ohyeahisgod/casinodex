@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/ui";
-import { site } from "@/lib/site";
+import { contactMailto, site } from "@/lib/site";
 import { getSponsorInventory, usdPerMonth } from "@/lib/sponsors";
 
 export const dynamic = "force-dynamic";
@@ -25,10 +26,11 @@ export default function SponsorsPage() {
       <h1 className="mt-3 font-display text-3xl sm:text-4xl">贊助方案</h1>
       <p className="mt-3 max-w-2xl text-sm leading-6 text-mute">
         CasinoDex 出售獨立廣告檔位，不出售有機排名。Gold 三席預設全空，留給業務銷售。
-        洽詢：
-        <a className="ml-1 underline" href={`mailto:${site.contactEmail}`}>
+        贊助洽詢請用合作信箱
+        <a className="ml-1 underline" href={contactMailto("贊助洽詢")}>
           {site.contactEmail}
         </a>
+        ，或填下方表單。請勿寄到個人 Gmail。
       </p>
 
       <div className="mt-10 grid gap-4 lg:grid-cols-3">
@@ -62,6 +64,17 @@ export default function SponsorsPage() {
             列表高亮 +「精選」標籤，每頁最多 6 席。已售 {bronzeFilled} / 6。
           </p>
         </article>
+      </div>
+
+      <div className="mt-10 max-w-xl rounded-2xl border border-gold/40 bg-gold-soft p-5">
+        <h2 className="font-display text-2xl">贊助洽詢</h2>
+        <p className="mt-2 text-sm leading-6 text-mute">
+          收件地址來自 <code className="text-paper">content/site.json</code> 的{" "}
+          <code className="text-paper">contactEmail</code>，目前是 {site.contactEmail}。
+        </p>
+        <div className="mt-5">
+          <ContactForm defaultTopic="sponsor" />
+        </div>
       </div>
 
       <p className="mt-8 text-sm text-mute">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { contactMailto, site } from "@/lib/site";
 import { Container } from "./ui";
 
 export function SiteFooter() {
@@ -23,11 +23,12 @@ export function SiteFooter() {
           <p className="font-semibold">CasinoDex</p>
           <div className="mt-3 flex flex-col gap-2 text-mute">
             <Link href="/sponsors">贊助方案</Link>
+            <Link href="/contact">合作洽詢</Link>
             <Link href="/about">關於我們</Link>
             <Link href="/legal/disclaimer">免責聲明</Link>
             <Link href="/legal/responsible-gaming">負責任博彩</Link>
             <Link href="/admin">贊助檔位管理</Link>
-            <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
+            <a href={contactMailto()}>{site.contactEmail}</a>
           </div>
         </div>
       </Container>

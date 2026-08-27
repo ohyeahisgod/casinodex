@@ -8,6 +8,7 @@ import { Container } from "./ui";
 const NAV = [
   { href: "/directory", label: "平台名錄" },
   { href: "/sponsors", label: "贊助方案" },
+  { href: "/contact", label: "合作洽詢" },
   { href: "/about", label: "關於" },
 ];
 

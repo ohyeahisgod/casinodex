@@ -6,6 +6,7 @@ export default function sitemap() {
     "",
     "/directory",
     "/sponsors",
+    "/contact",
     "/about",
     "/legal/disclaimer",
     "/legal/responsible-gaming",

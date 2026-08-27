@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
-import { site } from "@/lib/site";
+import { contactMailto, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "關於我們",
@@ -20,6 +20,13 @@ export default function AboutPage() {
         </p>
         <p>
           未持牌品牌不得上架。全站 18+。付費版位一律標示「贊助」，Gold 首頁三席預設空白，留給銷售而不是用品牌自動填滿。
+        </p>
+        <p>
+          合作與贊助請寄{" "}
+          <a className="text-paper underline" href={contactMailto()}>
+            {site.contactEmail}
+          </a>
+          ，或使用網站洽詢表單。這是 CasinoDex 的 AgentMail 信箱，不是個人 Gmail。
         </p>
       </div>
     </Container>
