@@ -1,0 +1,184 @@
+[
+  {
+    "slug": "stake",
+    "name": "Stake",
+    "blurbZh": "以加密結算為主的娛樂城與體育博彩平台，遊戲庫與高限額桌在亞洲玩家圈討論度高。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://stake.com"
+  },
+  {
+    "slug": "bc-game",
+    "name": "BC.Game",
+    "blurbZh": "加密原生娛樂城，提供原創公平可驗證遊戲、老虎機與體育投注，適合以數位資產入金的玩家。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://bc.game"
+  },
+  {
+    "slug": "1xbet",
+    "name": "1xBet",
+    "blurbZh": "大型國際體育博彩與娛樂城品牌，盤口覆蓋面廣，亞洲市場能見度高。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://1xbet.com"
+  },
+  {
+    "slug": "roobet",
+    "name": "Roobet",
+    "blurbZh": "以加密貨幣為主的娛樂城，主打即時遊戲、原創玩法與社群導向體驗。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://roobet.com"
+  },
+  {
+    "slug": "cloudbet",
+    "name": "Cloudbet",
+    "blurbZh": "較早進入加密博彩的平台之一，同時提供娛樂城與體育博彩。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://www.cloudbet.com"
+  },
+  {
+    "slug": "rollbit",
+    "name": "Rollbit",
+    "blurbZh": "結合加密娛樂城與體育博彩的平台，以加密錢包入出金為主。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://rollbit.com"
+  },
+  {
+    "slug": "gg-bet",
+    "name": "GG.BET",
+    "blurbZh": "以電競與體育盤口見長的博彩品牌，亦提供娛樂城遊戲。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://gg.bet"
+  },
+  {
+    "slug": "22bet",
+    "name": "22Bet",
+    "blurbZh": "國際體育博彩與娛樂城平台，賽事覆蓋與現場投注為主要賣點。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://22bet.com"
+  },
+  {
+    "slug": "1win",
+    "name": "1win",
+    "blurbZh": "提供體育博彩與娛樂城的線上平台，部分亞洲市場討論較多。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://1win.com"
+  },
+  {
+    "slug": "gamdom",
+    "name": "Gamdom",
+    "blurbZh": "加密娛樂城，結合遊戲、獎勵活動與社群導向體驗。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://gamdom.com"
+  },
+  {
+    "slug": "shuffle",
+    "name": "Shuffle",
+    "blurbZh": "加密原生娛樂城與體育博彩平台，強調原創遊戲與加密結算。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://shuffle.com"
+  },
+  {
+    "slug": "rainbet",
+    "name": "Rainbet",
+    "blurbZh": "加密娛樂城品牌，提供原創遊戲、老虎機與體育線。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://rainbet.com"
+  },
+  {
+    "slug": "7bit",
+    "name": "7Bit",
+    "blurbZh": "以娛樂城與加密支付為主的線上賭場品牌，遊戲供應商覆蓋面廣。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://7bitcasino.com"
+  },
+  {
+    "slug": "betfury",
+    "name": "BetFury",
+    "blurbZh": "加密娛樂城，結合獎勵機制與娛樂城、體育博彩產品。持牌與官網資訊待編輯核實。",
+    "categories": ["casino", "sports", "crypto"],
+    "license": {
+      "label": "持牌資訊待核實",
+      "authority": null,
+      "licenseId": null
+    },
+    "score": null,
+    "officialUrl": "https://betfury.io"
+  }
+]

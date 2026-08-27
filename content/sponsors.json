@@ -1,0 +1,37 @@
+{
+  "gold": {
+    "id": "gold",
+    "nameZh": "本週熱門",
+    "priceUsdPerMonth": 1200,
+    "slotCount": 3,
+    "slots": [
+      { "id": "gold-1", "enabled": false, "listingSlug": null },
+      { "id": "gold-2", "enabled": false, "listingSlug": null },
+      { "id": "gold-3", "enabled": false, "listingSlug": null }
+    ]
+  },
+  "silver": {
+    "id": "silver",
+    "nameZh": "分類置頂",
+    "priceUsdPerMonth": 600,
+    "slots": {
+      "casino": { "id": "silver-casino", "enabled": false, "listingSlug": null },
+      "sports": { "id": "silver-sports", "enabled": false, "listingSlug": null },
+      "crypto": { "id": "silver-crypto", "enabled": false, "listingSlug": null }
+    }
+  },
+  "bronze": {
+    "id": "bronze",
+    "nameZh": "精選",
+    "priceUsdPerMonth": 250,
+    "maxPerPage": 6,
+    "slots": [
+      { "id": "bronze-1", "enabled": false, "listingSlug": null },
+      { "id": "bronze-2", "enabled": false, "listingSlug": null },
+      { "id": "bronze-3", "enabled": false, "listingSlug": null },
+      { "id": "bronze-4", "enabled": false, "listingSlug": null },
+      { "id": "bronze-5", "enabled": false, "listingSlug": null },
+      { "id": "bronze-6", "enabled": false, "listingSlug": null }
+    ]
+  }
+}
