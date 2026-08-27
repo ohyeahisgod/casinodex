@@ -16,7 +16,7 @@ Repository: [ohyeahisgod/casinodex](https://github.com/ohyeahisgod/casinodex)
 
 ## Stack
 
-Next.js (App Router) + TypeScript + Tailwind CSS v4.
+Next.js (App Router) + TypeScript + Tailwind CSS v4. Production hosting is Cloudflare Workers via OpenNext (`@opennextjs/cloudflare`), not a static export and not `@cloudflare/next-on-pages`.
 
 CMS-style data lives in JSON so listings and ads can be filled without touching React:
 
@@ -41,6 +41,35 @@ npm test      # organic vs paid separation
 npm run build
 npm start
 ```
+
+## Deploy to Cloudflare
+
+The app stays a full Next.js App Router site. OpenNext adapts `next build` for Workers.
+
+1. Log in to Cloudflare once on this machine:
+
+```bash
+npx wrangler login
+```
+
+2. Build and deploy:
+
+```bash
+npm run deploy
+```
+
+`npm run deploy` runs `opennextjs-cloudflare build` then `opennextjs-cloudflare deploy`. The Worker name is `casinodex` in `wrangler.jsonc`. Wrangler prints a `*.workers.dev` URL after a successful deploy. Custom domains are attached in the Cloudflare dashboard, not in this repo.
+
+Other scripts:
+
+| Script | Purpose |
+| --- | --- |
+| `npm run build` | Local Next.js production build (unchanged) |
+| `npm run cf:build` | OpenNext Worker build only |
+| `npm run preview` | OpenNext build + local Workers runtime preview |
+| `npm run cf-typegen` | Generate `cloudflare-env.d.ts` from Wrangler config |
+
+Do not commit secrets. Keep `.dev.vars` and `.env.local` out of git (copy `.dev.vars.example` for local Wrangler preview).
 
 ## How to fill a listing
 
