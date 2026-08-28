@@ -37,6 +37,13 @@ export function getOrganicListings(options: {
   return filtered;
 }
 
+/** Homepage showcase: a short organic preview, never the full directory. */
+export const SHOWCASE_LIMIT = 6;
+
+export function getShowcaseListings(limit = SHOWCASE_LIMIT): Listing[] {
+  return getOrganicListings({ sort: "default" }).slice(0, limit);
+}
+
 export function scoreLabel(score: number | null | undefined): string {
   if (score === null || score === undefined) return "待評分";
   return String(score);
