@@ -8,7 +8,7 @@ export function Container({
   className?: string;
 }) {
   return (
-    <div className={`mx-auto w-full max-w-6xl px-4 sm:px-6 ${className}`}>
+    <div className={`mx-auto w-full max-w-6xl px-3 sm:px-4 ${className}`}>
       {children}
     </div>
   );
@@ -23,7 +23,7 @@ export function SectionLabel({
 }) {
   return (
     <p
-      className={`text-xs font-semibold tracking-[0.16em] uppercase ${
+      className={`text-[11px] font-semibold tracking-wide ${
         tone === "sponsor" ? "text-gold" : "text-mute"
       }`}
     >

@@ -16,19 +16,16 @@ export default async function ContactPage({
   const defaultTopic = isContactTopic(topicParam) ? topicParam : "partnership";
 
   return (
-    <Container className="py-10 sm:py-12">
-      <p className="text-xs font-semibold tracking-[0.16em] text-warn uppercase">
-        18+ · 合作與贊助
-      </p>
-      <h1 className="mt-3 font-display text-3xl sm:text-4xl">合作洽詢</h1>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-mute">
-        唯一對外信箱（寫在 <code className="text-paper">content/site.json</code>）：
+    <Container className="py-5 sm:py-6">
+      <p className="text-xs text-warn">18+ · 合作與贊助</p>
+      <h1 className="mt-1 text-xl font-bold sm:text-2xl">合作洽詢</h1>
+      <p className="mt-2 max-w-2xl text-sm leading-6 text-mute">
+        唯一對外信箱：
         <a className="ml-1 underline" href={contactMailto()}>
           {site.contactEmail}
         </a>
-        。請勿寄到個人 Gmail 或其他私人信箱。
       </p>
-      <div className="mt-8 max-w-xl rounded-2xl border border-line bg-panel p-5">
+      <div className="mt-5 max-w-xl border border-line bg-panel p-4">
         <ContactForm defaultTopic={defaultTopic} />
       </div>
     </Container>

@@ -61,7 +61,7 @@ export function ContactForm({
           name="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2 text-paper"
+          className="mt-1 w-full rounded-sm border border-line bg-bg px-3 py-2 text-paper"
         />
       </label>
       <label className="block text-sm">
@@ -72,7 +72,7 @@ export function ContactForm({
           name="from"
           value={fromEmail}
           onChange={(event) => setFromEmail(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2 text-paper"
+          className="mt-1 w-full rounded-sm border border-line bg-bg px-3 py-2 text-paper"
         />
       </label>
       <label className="block text-sm">
@@ -81,7 +81,7 @@ export function ContactForm({
           name="company"
           value={company}
           onChange={(event) => setCompany(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2 text-paper"
+          className="mt-1 w-full rounded-sm border border-line bg-bg px-3 py-2 text-paper"
         />
       </label>
       <label className="block text-sm">
@@ -90,7 +90,7 @@ export function ContactForm({
           name="topic"
           value={topic}
           onChange={(event) => setTopic(event.target.value as ContactTopic)}
-          className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2 text-paper"
+          className="mt-1 w-full rounded-sm border border-line bg-bg px-3 py-2 text-paper"
         >
           {TOPIC_KEYS.map((key) => (
             <option key={key} value={key}>
@@ -107,12 +107,12 @@ export function ContactForm({
           rows={6}
           value={message}
           onChange={(event) => setMessage(event.target.value)}
-          className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2 text-paper"
+          className="mt-1 w-full rounded-sm border border-line bg-bg px-3 py-2 text-paper"
         />
       </label>
       <button
         type="submit"
-        className="rounded-full bg-paper px-5 py-2.5 text-sm font-semibold text-bg"
+        className="rounded-sm bg-play px-5 py-2.5 text-sm font-bold text-white"
       >
         寄到 {site.contactEmail}
       </button>

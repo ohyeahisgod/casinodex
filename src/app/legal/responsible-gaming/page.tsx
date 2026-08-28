@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function ResponsibleGamingPage() {
   return (
     <Container className="py-10 sm:py-12">
-      <h1 className="font-display text-3xl">負責任博彩</h1>
+      <h1 className="text-xl font-bold">負責任博彩</h1>
       <div className="mt-6 max-w-2xl space-y-4 text-sm leading-7 text-mute">
         <p>
           博弈可能令人成癮。CasinoDex 只提供名錄與廣告，請把博彩當成娛樂、設定上限，並在需要時求助。

@@ -27,13 +27,13 @@ export function CategoryFilters({
   if (category) query.set("category", category);
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-      <div className="flex flex-wrap gap-2">
+    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex flex-wrap gap-1">
         {chips.map((chip) => (
           <Link
             key={chip.label}
             href={chip.href}
-            className={`rounded-full border px-3 py-1.5 text-sm ${
+            className={`rounded-sm border px-2.5 py-1 text-sm ${
               chip.active
                 ? "border-paper bg-paper text-bg"
                 : "border-line text-mute hover:text-paper"
@@ -43,7 +43,7 @@ export function CategoryFilters({
           </Link>
         ))}
       </div>
-      <div className="flex flex-wrap gap-2 text-sm">
+      <div className="flex flex-wrap gap-2 text-xs">
         <Link
           href={`/directory?${new URLSearchParams({ ...Object.fromEntries(query), sort: "default" }).toString()}`}
           className={sort === "default" ? "text-paper" : "text-mute hover:text-paper"}

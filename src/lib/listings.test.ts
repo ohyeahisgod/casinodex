@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { test } from "node:test";
 import { getOrganicListings, listings, scoreLabel } from "./listings";
 import { resolveInventory, sponsorConfig } from "./sponsors";
@@ -48,9 +50,25 @@ test("category filter does not inject sponsor ranking", () => {
   assert.ok(!crypto.some((item) => item.slug === "1xbet"));
 });
 
-test("empty score renders as 待評分", () => {
+test("empty score stays null in data and is not a fake chip in listings", () => {
   assert.equal(scoreLabel(null), "待評分");
   assert.equal(scoreLabel(undefined), "待評分");
+  assert.ok(listings.every((item) => item.score === null));
+});
+
+test("each of the 14 operators has a unique selling line and an in-repo logo", () => {
+  const taglines = listings.map((item) => item.taglineZh);
+  assert.equal(new Set(taglines).size, 14);
+  assert.ok(listings.every((item) => item.taglineZh.length > 0));
+  assert.ok(
+    listings.every((item) => !item.blurbZh.includes("持牌與官網資訊待編輯核實")),
+  );
+  assert.ok(listings.every((item) => !item.taglineZh.includes("待核實")));
+  assert.ok(listings.every((item) => item.logo.startsWith("/logos/")));
+  for (const item of listings) {
+    const file = path.join(process.cwd(), "public", item.logo);
+    assert.equal(existsSync(file), true, `${item.slug} missing ${item.logo}`);
+  }
 });
 
 test("gold three seats stay empty by default and never auto-fill", () => {

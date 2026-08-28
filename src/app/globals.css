@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0b1017;
-  --bg-2: #121923;
-  --panel: #171f2b;
-  --line: rgba(233, 238, 246, 0.1);
-  --paper: #e8eef6;
-  --mute: #93a0b3;
-  --gold: #c9a24a;
-  --gold-soft: rgba(201, 162, 74, 0.16);
-  --warn: #e3b56a;
+  --bg: #101318;
+  --bg-2: #161b22;
+  --panel: #1b212b;
+  --logo: #0c0f14;
+  --line: #2c3440;
+  --paper: #eef1f6;
+  --mute: #9aa3b2;
+  --play: #1f9d55;
+  --play-ink: #06210f;
+  --gold: #b0892e;
+  --warn: #d7a35a;
   --danger: #c9846a;
 }
 
@@ -17,15 +19,16 @@
   --color-bg: var(--bg);
   --color-bg-2: var(--bg-2);
   --color-panel: var(--panel);
+  --color-logo: var(--logo);
   --color-line: var(--line);
   --color-paper: var(--paper);
   --color-mute: var(--mute);
+  --color-play: var(--play);
+  --color-play-ink: var(--play-ink);
   --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
   --color-warn: var(--warn);
   --color-danger: var(--danger);
   --font-sans: var(--font-sans-tc);
-  --font-display: var(--font-newsreader);
 }
 
 html {
@@ -36,12 +39,9 @@ html {
 body {
   min-height: 100%;
   font-family: var(--font-sans-tc), "Noto Sans TC", sans-serif;
-  background:
-    radial-gradient(1200px 500px at 10% -10%, rgba(201, 162, 74, 0.07), transparent 55%),
-    radial-gradient(900px 400px at 100% 0%, rgba(110, 140, 180, 0.08), transparent 50%),
-    var(--bg);
+  background: var(--bg);
 }
 
 a {
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
 }

@@ -2,35 +2,8 @@ import Link from "next/link";
 import type { Category, ResolvedSlot } from "@/lib/types";
 import { CATEGORY_LABEL } from "@/lib/site";
 import { usdPerMonth } from "@/lib/sponsors";
-import { OperatorRow } from "./OperatorRow";
+import { OperatorListing } from "./OperatorListing";
 import { SponsorBadge } from "./SponsorBadge";
-import { SectionLabel } from "./ui";
-
-function EmptySilver({
-  slot,
-  category,
-}: {
-  slot: ResolvedSlot;
-  category: Category;
-}) {
-  return (
-    <article className="rounded-2xl border border-dashed border-gold/45 bg-gold-soft p-4 sm:p-5">
-      <div className="flex flex-wrap items-center gap-2">
-        <SponsorBadge extra="SILVER" />
-        <span className="text-sm text-mute">
-          {CATEGORY_LABEL[category]}置頂
-        </span>
-      </div>
-      <h3 className="mt-3 text-lg font-semibold text-paper">此分類置頂檔位招租</h3>
-      <p className="mt-1 text-sm leading-6 text-mute">
-        固定出現在該分類列表頂端，不進入有機排名。{usdPerMonth(slot.priceUsdPerMonth)}
-      </p>
-      <Link href="/sponsors" className="mt-3 inline-block text-sm font-medium hover:underline">
-        了解贊助方案
-      </Link>
-    </article>
-  );
-}
 
 export function SilverPins({
   slots,
@@ -39,20 +12,35 @@ export function SilverPins({
 }) {
   if (slots.length === 0) return null;
 
+  const filled = slots.filter(({ slot }) => slot.filled && slot.listing);
+  const vacant = slots.filter(({ slot }) => !(slot.filled && slot.listing));
+  const sample = slots[0]?.slot;
+
   return (
-    <section className="space-y-3">
-      <SectionLabel tone="sponsor">贊助置頂 · Silver</SectionLabel>
-      <div className="grid gap-3">
-        {slots.map(({ category, slot }) =>
-          slot.filled && slot.listing ? (
-            <div key={slot.id}>
-              <OperatorRow listing={slot.listing} sponsored />
-            </div>
-          ) : (
-            <EmptySilver key={slot.id} slot={slot} category={category} />
-          ),
-        )}
-      </div>
+    <section>
+      {filled.map(({ category, slot }) => (
+        <div key={slot.id}>
+          <p className="mb-1 flex items-center gap-2 text-[11px] text-mute">
+            <SponsorBadge extra="SILVER" />
+            {CATEGORY_LABEL[category]}置頂
+          </p>
+          <OperatorListing listing={slot.listing!} sponsored />
+        </div>
+      ))}
+      {vacant.length > 0 && sample ? (
+        <p className="flex flex-wrap items-center gap-2 border border-dashed border-line px-3 py-2 text-xs text-mute">
+          <SponsorBadge extra="SILVER" />
+          <span>
+            分類置頂招租
+            {vacant.map(({ category }) => ` · ${CATEGORY_LABEL[category]}`).join("")}
+            {" · "}
+            {usdPerMonth(sample.priceUsdPerMonth)}
+          </span>
+          <Link href="/sponsors" className="ml-auto text-paper hover:underline">
+            贊助方案
+          </Link>
+        </p>
+      ) : null}
     </section>
   );
 }
