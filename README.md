@@ -12,7 +12,8 @@ Repository: [ohyeahisgod/casinodex](https://github.com/ohyeahisgod/casinodex)
 - Entire site is 18+. Age gate + persistent 18+ notice.
 - Paid placements always show **贊助**. They never affect organic ranking.
 - Scores stay `null` until a real review exists. The UI does **not** show empty 「待評分」 chips.
-- Gold homepage seats ship **empty** (3 quiet 「本週熱門·贊助席位」 placeholders).
+- Gold homepage seats ship **empty** (3 quiet 「本週熱門·贊助席位」 placeholders). They are the homepage visual hero.
+- Homepage `/` is a **showcase** (Gold hero + at most 6 featured cards). `/directory` is the **database** (full 14 + filters).
 
 ## Stack
 
@@ -153,7 +154,7 @@ Gold 2/3, other Silver categories, and Bronze 2–6 follow the same pattern. See
 2. Open `/admin`, sign in, assign slugs, toggle 開啟, save.
 3. Locally this writes `content/sponsors.json`. On serverless hosts the write is not durable — copy the JSON back into git or use env vars.
 
-Paid and organic stay separate in the UI: gold rail / silver pins / bronze highlights are labeled 贊助; the directory below is the unpaid list.
+Paid and organic stay separate in the UI: gold homepage seats / silver pins / bronze highlights are labeled 贊助; `/directory` is the unpaid list.
 
 ## Partnership / contact email
 
@@ -163,8 +164,8 @@ Current address: **casinodex@agentmail.to** (AgentMail). Do not use a personal G
 
 ## Pages
 
-- `/` — compact 18+ header, 3 empty Gold seats, dense organic directory of the 14 brands
-- `/directory` — category filters, quiet Silver/Bronze inventory, organic results
+- `/` — showcase: compact 18+ line, 3 empty Gold hero seats, 3 category entries, up to 6 featured operator cards, 看完整名錄
+- `/directory` — the database: category filters, quiet Silver/Bronze inventory, full 14 organic rows
 - `/operators/[slug]` — large logo, name, short blurb, license, official-site CTA
 - `/sponsors` — rate card + 贊助洽詢 form
 - `/contact` — partnership / sponsor contact form (mailto the AgentMail inbox)

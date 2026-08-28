@@ -2,7 +2,13 @@ import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { test } from "node:test";
-import { getOrganicListings, listings, scoreLabel } from "./listings";
+import {
+  getOrganicListings,
+  getShowcaseListings,
+  listings,
+  scoreLabel,
+  SHOWCASE_LIMIT,
+} from "./listings";
 import { resolveInventory, sponsorConfig } from "./sponsors";
 
 test("ships fourteen licensed listings", () => {
@@ -33,6 +39,21 @@ test("organic default order ignores paid slots and scores", () => {
   assert.equal(organic.length, 14);
   assert.equal(organic[0].name, "Stake");
   assert.ok(organic.every((item) => item.score === null));
+});
+
+test("homepage showcase is a six-card slice of organic listings, not the full 14", () => {
+  const organic = getOrganicListings({ sort: "default" });
+  const showcase = getShowcaseListings();
+  assert.equal(SHOWCASE_LIMIT, 6);
+  assert.equal(showcase.length, 6);
+  assert.ok(showcase.length < organic.length);
+  assert.deepEqual(
+    showcase.map((item) => item.name),
+    ["Stake", "BC.Game", "1xBet", "Roobet", "Cloudbet", "Rollbit"],
+  );
+  assert.ok(
+    showcase.every((item) => organic.some((org) => org.slug === item.slug)),
+  );
 });
 
 test("organic name sort is alphabetical and still unpaid", () => {
