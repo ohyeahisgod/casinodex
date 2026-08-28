@@ -25,7 +25,7 @@ function SlotFields({
   authed: boolean;
 }) {
   return (
-    <div className="grid gap-3 rounded-xl border border-line bg-panel p-4 sm:grid-cols-[1fr_2fr_auto] sm:items-center">
+    <div className="grid gap-3 rounded-sm border border-line bg-panel p-4 sm:grid-cols-[1fr_2fr_auto] sm:items-center">
       <p className="text-sm font-medium">{label}</p>
       <label className="text-sm text-mute">
         品牌
@@ -68,7 +68,7 @@ export default async function AdminPage({
 
   return (
     <Container className="py-10 sm:py-12">
-      <h1 className="font-display text-3xl">贊助檔位管理</h1>
+      <h1 className="text-xl font-bold">贊助檔位管理</h1>
       <p className="mt-3 max-w-2xl text-sm leading-6 text-mute">
         Gold / Silver / Bronze 都在這裡指派。預設三席 Gold 全空。沒有程式改動也能改文案與開關：編輯
         <code className="mx-1 text-paper">content/sponsors.json</code>
@@ -92,7 +92,7 @@ export default async function AdminPage({
               className="mt-1 w-full rounded-lg border border-line bg-bg px-3 py-2"
             />
           </label>
-          <button className="rounded-full bg-paper px-4 py-2 text-sm font-semibold text-bg">
+          <button className="rounded-sm bg-play px-4 py-2 text-sm font-bold text-white">
             登入
           </button>
         </form>
@@ -106,7 +106,7 @@ export default async function AdminPage({
 
       <form action={saveSponsors} className="mt-8 space-y-10">
         <section>
-          <h2 className="font-display text-2xl">Gold · 本週熱門</h2>
+          <h2 className="text-lg font-bold">Gold · 本週熱門</h2>
           <label className="mt-3 block text-sm text-mute">
             月費 USD
             <input
@@ -131,7 +131,7 @@ export default async function AdminPage({
         </section>
 
         <section>
-          <h2 className="font-display text-2xl">Silver · 分類置頂</h2>
+          <h2 className="text-lg font-bold">Silver · 分類置頂</h2>
           <label className="mt-3 block text-sm text-mute">
             月費 USD
             <input
@@ -156,7 +156,7 @@ export default async function AdminPage({
         </section>
 
         <section>
-          <h2 className="font-display text-2xl">Bronze · 精選</h2>
+          <h2 className="text-lg font-bold">Bronze · 精選</h2>
           <label className="mt-3 block text-sm text-mute">
             月費 USD
             <input
@@ -183,12 +183,12 @@ export default async function AdminPage({
         <div className="flex flex-wrap gap-3">
           <button
             disabled={!authed}
-            className="rounded-full bg-paper px-5 py-2.5 text-sm font-semibold text-bg disabled:opacity-40"
+            className="rounded-sm bg-play px-5 py-2.5 text-sm font-bold text-white disabled:opacity-40"
           >
             儲存指派
           </button>
           {authed ? (
-            <button formAction={logoutAdmin} className="rounded-full border border-line px-5 py-2.5 text-sm">
+            <button formAction={logoutAdmin} className="rounded-sm border border-line px-5 py-2.5 text-sm">
               登出
             </button>
           ) : null}

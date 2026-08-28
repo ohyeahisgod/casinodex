@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader, Noto_Sans_TC } from "next/font/google";
+import { Noto_Sans_TC } from "next/font/google";
 import { AgeGate } from "@/components/AgeGate";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -10,12 +10,6 @@ const sans = Noto_Sans_TC({
   variable: "--font-sans-tc",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const display = Newsreader({
-  variable: "--font-newsreader",
-  subsets: ["latin"],
-  weight: ["500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -33,11 +27,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="zh-Hant"
-      className={`${sans.variable} ${display.variable} h-full antialiased`}
-    >
-      <body className="flex min-h-full flex-col bg-bg font-sans text-paper">
+    <html lang="zh-Hant" className={`${sans.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-bg font-sans text-sm text-paper">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

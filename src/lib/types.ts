@@ -13,6 +13,8 @@ export type LicenseInfo = {
 export type Listing = {
   slug: string;
   name: string;
+  logo: string;
+  taglineZh: string;
   blurbZh: string;
   categories: Category[];
   license: LicenseInfo;

@@ -16,30 +16,30 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-bg/90 backdrop-blur">
-      <div className="border-b border-warn/30 bg-warn/10 px-4 py-2 text-center text-xs text-warn sm:text-sm">
+    <header className="sticky top-0 z-40 border-b border-line bg-bg">
+      <div className="border-b border-line bg-bg-2 px-3 py-1 text-center text-[11px] text-warn">
         18+ ｜ {site.tagline}
       </div>
-      <Container className="flex items-center justify-between gap-4 py-3">
-        <Link href="/" className="min-w-0">
-          <span className="block font-display text-lg tracking-tight text-paper sm:text-xl">
+      <Container className="flex items-center justify-between gap-4 py-2">
+        <Link href="/" className="min-w-0 leading-tight">
+          <span className="block text-base font-bold tracking-tight text-paper">
             {site.name}
           </span>
-          <span className="block truncate text-xs text-mute">{site.nameZh}</span>
+          <span className="block truncate text-[11px] text-mute">{site.nameZh}</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm text-mute md:flex">
+        <nav className="hidden items-center gap-4 text-sm text-mute md:flex">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href} className="hover:text-paper">
               {item.label}
             </Link>
           ))}
-          <span className="rounded-full border border-warn/40 px-2 py-0.5 text-[11px] font-semibold text-warn">
+          <span className="rounded-sm border border-warn/50 px-1.5 py-0.5 text-[11px] font-bold text-warn">
             18+
           </span>
         </nav>
         <button
           type="button"
-          className="rounded-full border border-line px-3 py-1.5 text-sm md:hidden"
+          className="rounded-sm border border-line px-3 py-1 text-sm md:hidden"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >

@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import { BronzeSlots } from "@/components/BronzeSlots";
 import { CategoryFilters } from "@/components/CategoryFilters";
-import { OperatorRow } from "@/components/OperatorRow";
+import { OperatorListing } from "@/components/OperatorListing";
 import { SilverPins } from "@/components/SilverPins";
-import { Container, SectionLabel } from "@/components/ui";
+import { Container } from "@/components/ui";
 import { getOrganicListings, isCategory } from "@/lib/listings";
 import { CATEGORY_LABEL } from "@/lib/site";
-import {
-  bronzeForPage,
-  getSponsorInventory,
-} from "@/lib/sponsors";
+import { bronzeForPage, getSponsorInventory } from "@/lib/sponsors";
 import type { Category, OrganicSort } from "@/lib/types";
 import { CATEGORIES } from "@/lib/types";
 
@@ -44,32 +41,32 @@ export default async function DirectoryPage({
   const bronze = bronzeForPage(inventory.bronze, category);
 
   return (
-    <Container className="py-10 sm:py-12">
-      <p className="text-xs font-semibold tracking-[0.16em] text-warn uppercase">
-        18+ 名錄
-      </p>
-      <h1 className="mt-3 font-display text-3xl sm:text-4xl">平台名錄</h1>
-      <p className="mt-3 max-w-2xl text-sm leading-6 text-mute">
-        有機結果依名稱或預設順序排列，與誰付費無關。評分欄位目前為「待評分」。
-        {category
-          ? `目前篩選：${CATEGORY_LABEL[category]}。`
-          : "可依娛樂城、體育、加密篩選。"}
-      </p>
+    <Container className="py-4 sm:py-5">
+      <div className="flex flex-wrap items-end justify-between gap-2">
+        <div>
+          <h1 className="text-xl font-bold">平台名錄</h1>
+          <p className="mt-1 text-xs text-mute">
+            18+ · 有機排序與誰付費無關
+            {category ? ` · ${CATEGORY_LABEL[category]}` : ""}
+          </p>
+        </div>
+        <p className="text-xs text-mute">{organic.length} 家平台</p>
+      </div>
 
-      <div className="mt-6">
+      <div className="mt-3">
         <CategoryFilters category={category} sort={sort} />
       </div>
 
-      <div className="mt-10 space-y-10">
+      <div className="mt-4 space-y-3">
         <SilverPins slots={silverSlots} />
         <BronzeSlots slots={bronze} />
-
         <section>
-          <SectionLabel>有機結果 · 非付費</SectionLabel>
-          <p className="mt-2 text-sm text-mute">{organic.length} 個平台</p>
-          <div className="mt-4 grid gap-3">
+          <p className="mb-1 text-[11px] font-semibold tracking-wide text-mute">
+            有機結果 · 非付費
+          </p>
+          <div>
             {organic.map((listing) => (
-              <OperatorRow key={listing.slug} listing={listing} />
+              <OperatorListing key={listing.slug} listing={listing} />
             ))}
           </div>
         </section>

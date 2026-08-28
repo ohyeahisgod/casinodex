@@ -11,8 +11,8 @@ Repository: [ohyeahisgod/casinodex](https://github.com/ohyeahisgod/casinodex)
 - Licensed operators only. Do not add unlicensed brands.
 - Entire site is 18+. Age gate + persistent 18+ notice.
 - Paid placements always show **贊助**. They never affect organic ranking.
-- Scores are empty for now (`null` → 「待評分」).
-- Gold homepage seats ship **empty** (3 vacant 「本週熱門」 cards).
+- Scores stay `null` until a real review exists. The UI does **not** show empty 「待評分」 chips.
+- Gold homepage seats ship **empty** (3 quiet 「本週熱門·贊助席位」 placeholders).
 
 ## Stack
 
@@ -79,7 +79,9 @@ Edit `content/listings.json`. Each operator needs:
 {
   "slug": "stake",
   "name": "Stake",
-  "blurbZh": "繁體中文簡介（可先占位）",
+  "logo": "/logos/stake.svg",
+  "taglineZh": "一行繁中賣點",
+  "blurbZh": "短簡介，每家都要不同",
   "categories": ["casino", "sports", "crypto"],
   "license": {
     "label": "持牌資訊待核實",
@@ -94,8 +96,10 @@ Edit `content/listings.json`. Each operator needs:
 Rules:
 
 - `name` stays the official English brand.
+- `logo` is a file in `public/logos/` (never a hotlinked URL). Sources: `content/logos-sources.md`.
+- `taglineZh` is one unique Traditional Chinese line for the listing row.
 - `categories` is any of `casino` (娛樂城), `sports` (體育), `crypto` (加密).
-- Keep `score` as `null` until a real review exists.
+- Keep `score` as `null` until a real review exists — do not invent scores or show empty score chips.
 - Replace the license placeholder after you verify the licence. Unlicensed brands must not be added.
 - Detail pages are generated from `slug` at `/operators/<slug>`.
 - Organic order is file order (`sort=default`) or English name (`sort=name`). Payment never changes this list.
@@ -159,9 +163,9 @@ Current address: **casinodex@agentmail.to** (AgentMail). Do not use a personal G
 
 ## Pages
 
-- `/` — 18+ notice, hero, 3 empty Gold seats, organic preview of the 14 brands
-- `/directory` — category filters, Silver pins, Bronze highlights, organic results
-- `/operators/[slug]` — detail, license placeholder, empty score, official-site CTA
+- `/` — compact 18+ header, 3 empty Gold seats, dense organic directory of the 14 brands
+- `/directory` — category filters, quiet Silver/Bronze inventory, organic results
+- `/operators/[slug]` — large logo, name, short blurb, license, official-site CTA
 - `/sponsors` — rate card + 贊助洽詢 form
 - `/contact` — partnership / sponsor contact form (mailto the AgentMail inbox)
 - `/admin` — assign Gold / Silver / Bronze
